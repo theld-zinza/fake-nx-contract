@@ -44,6 +44,17 @@ app.get('/api-data', (req, res) => {
   })
 })
 
+app.get('/uinfo/v1/get_contract_status', (req, res) => {
+  res.json({
+    contract_info_list: [
+      {
+        plan_type: 14010110,
+        contract_status: 1,
+      },
+    ],
+  })
+})
+
 // Health check
 app.get('/healthz', (req, res) => {
   res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() })
